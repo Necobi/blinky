@@ -11,13 +11,18 @@ int main(){
     //inside the while loops makes sure we do this in each frame
     while(true) {
 
-        if(bn::keypad::a_pressed()){
+        if(bn::keypad::a_held()){
              bn::backdrop::set_color(bn::color(31,21,22));
         }
-        if(bn::keypad::b_pressed()){
+        if(bn::keypad::b_held()){
             bn::backdrop::set_color(bn::color(24,25,30));
         }
-        
+
+        if(bn::keypad::any_held()==false){
+             bn::backdrop::set_color(bn::color(10,20,25));
+
+        }
+         
 
         bn::core::update();
     }
